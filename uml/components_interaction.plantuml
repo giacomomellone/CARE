@@ -1,0 +1,26 @@
+@startuml Components Interaction Design - Sequence Diagram
+
+participant User
+participant "User Interface (UI)" as UI
+participant "Visualization & Reporting Module (VRM)" as VRM
+participant "Data Collection Module (DCM)" as DCM
+participant "Ground Control Station (GCS)" as GCS
+participant "Sentinel-3 (S3)" as S3
+participant "Data Preprocessing Module (DPM)" as DPM
+participant "Erosion Pattern Analysis Module (EPAM)" as EPAM
+participant "Alerting Module (AM)" as AM
+
+User->>UI: Access System
+UI->>DCM: Request Data
+DCM->>GCS: Request Telemetries
+GCS->>S3: Retrieve Raw Image & Data
+S3->>GCS: Send Telemetries (Images & Data)
+GCS->>DCM: Send Raw Image & Data
+DCM->>DPM: Send Raw Image & Data
+DPM->>EPAM: Send Preprocessed Data
+EPAM->>AM: Send Analysis Results
+EPAM->>VRM: Send Analysis Results
+VRM->>UI: Generate Visualization & Reports
+UI->>User: Display Visualization & Reports
+
+@enduml

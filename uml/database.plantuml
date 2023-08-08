@@ -1,0 +1,42 @@
+@startuml Database Design - Class Diagram
+
+class RawImage {
+    +id: int
+    +timestamp: DateTime
+    +location: String
+    +imageData: Blob
+}
+
+class ProcessedData {
+    +id: int
+    +rawImageId: int
+    +preprocessedData: Blob
+}
+
+class ErosionPattern {
+    +id: int
+    +patternType: String
+    +location: String
+    +severity: int
+}
+
+class Alert {
+    +id: int
+    +timestamp: DateTime
+    +message: String
+    +status: String
+}
+
+class User {
+    +id: int
+    +username: String
+    +passwordHash: String
+    +role: String
+}
+
+RawImage "1" --> "0..1" ProcessedData: processes
+RawImage "0..*" --> "0..*" ErosionPattern: detects
+ErosionPattern "1" --> "0..*" Alert: triggers
+User "1" --> "0..*" Alert: receives
+
+@enduml

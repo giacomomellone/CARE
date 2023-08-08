@@ -1,0 +1,19 @@
+@startuml Data Pipeline Design - Sequence Diagram
+
+participant "User" as User
+participant "DCM\n(Data Collection Module)" as DCM
+participant "DPM\n(Data Preprocessing Module)" as DPM
+participant "EPAM\n(Erosion Pattern Analysis Module)" as EPAM
+
+User->>DCM: Request Data
+DCM->>DPM: Send Raw Images & Data
+DPM->>DPM: Image Enhancement (e.g. Noise Reduction)
+DPM->>DPM: Edge Detection (e.g. Sobel, Canny)
+DPM->>DPM: Region Growing (e.g. Identify Segments)
+DPM->>EPAM: Send Preprocessed Data
+EPAM->>EPAM: Feature Extraction (e.g. Morphological Operations)
+EPAM->>EPAM: Pattern Recognition (e.g. Machine Learning Algorithms)
+EPAM->>EPAM: Spatial & Time-Series Analysis
+EPAM->>User: Send Analysis Results
+
+@enduml
