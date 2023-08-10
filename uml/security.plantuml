@@ -1,20 +1,17 @@
 @startuml Security Design - Package Diagram
 
 package "CARE System" {
-
-    [User Interface]
-    [Data Collection Module]
-    [Data Preprocessing Module]
-    [Erosion Pattern Analysis Module]
-    [Alerting Module]
-    [Visualization & Reporting Module]
-
-    [User Authentication] - [User Interface]
-    [Data Encryption] - [Data Collection Module]
-    [Data Integrity Check] - [Data Preprocessing Module]
-    [Access Control] - [Erosion Pattern Analysis Module]
-    [Secure Communication] - [Alerting Module]
-    [Secure Visualization] - [Visualization & Reporting Module]
+    [User Interface] as UI
+    [Data Collection Module] as DCM
+    [Data Preprocessing Module] as DPM
+    [Alerting Module] as AM
+    [Visualization & Reporting Module] as VRM
 }
+
+[User Authentication] -down- UI
+[Data Encryption] -down- DCM
+[Data Integrity Check] -down- DPM
+[Secure Communication] -down- AM
+[Secure Visualization] -down- VRM
 
 @enduml
