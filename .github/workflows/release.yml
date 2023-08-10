@@ -29,6 +29,10 @@ jobs:
         echo "TAG_NAME=$DATE_AND_TIME" >> $GITHUB_ENV
         echo "PACKAGE_NAME=pdf_docs" >> $GITHUB_ENV
 
+    - name: Install dependencies
+      run: |
+        sudo apt-get install -y graphviz
+
     - name: Generate the UML PNGs
       run: |
         ./tools/generate_uml_images.sh
