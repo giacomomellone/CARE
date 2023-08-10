@@ -11,7 +11,7 @@
 - [Data Collection](#data-collection)
 - [Data Preprocessing](#data-preprocessing)
 - [Erosion Pattern Analysis](#erosion-pattern-analysis)
-- [Monitoring, Alerting, and Reporting(#monitoring-alerting-and-reporting)
+- [Monitoring, Alerting, and Reporting](#monitoring-alerting-and-reporting)
 - [User Interaction](#user-interaction)
 - [Availability and Backup](#availability-and-backup)
 
