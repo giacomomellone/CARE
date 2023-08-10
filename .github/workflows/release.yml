@@ -1,0 +1,65 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Pandoc
+      run: sudo apt-get install -y pandoc
+
+    - name: Install markdown-pdf
+      run: npm install -g markdown-pdf
+
+    - name: Set new release version
+      id: set_new_version
+      run: |
+        DATE_AND_TIME=$(date '+%Y_%m_%d__%H_%M')
+        echo "TAG_NAME=$DATE_AND_TIME" >> $GITHUB_ENV
+        echo "PACKAGE_NAME=pdf_docs" >> $GITHUB_ENV
+
+    - name: Convert Markdown files to PDF
+      run: |
+        for file in ./docs/*.md; do
+          markdown-pdf "$file" -o "${file%.md}.pdf"
+        done
+
+    - name: Move PDFs to Artifacts Folder
+      run: |
+        mkdir ${{ env.PACKAGE_NAME }}
+        mv ./docs/*.pdf ${{ env.PACKAGE_NAME }}/
+        zip -r ${{ env.PACKAGE_NAME }}.zip \
+        ${{ env.PACKAGE_NAME }}
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        release_name: CARE ${{ env.PACKAGE_NAME }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./${{ env.PACKAGE_NAME }}.zip
+        asset_name: ${{ env.PACKAGE_NAME }}.zip
+        asset_content_type: application/zip
+      

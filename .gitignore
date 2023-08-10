@@ -33,3 +33,7 @@
 
 # misc
 .DS_Store
+plantuml.jar
+
+# images
+*.png
