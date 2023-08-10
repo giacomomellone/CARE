@@ -1,5 +1,36 @@
 # System Requirements Document (SRD) - CARE Project
 
+## Table of Contents
+
+### [Introduction](#introduction)
+
+### [Definitions and Acronyms](#definitions-and-acronyms)
+
+### [Functional Requirements](#functional-requirements)
+
+- [Data Collection](#data-collection)
+- [Data Preprocessing](#data-preprocessing)
+- [Erosion Pattern Analysis](#erosion-pattern-analysis)
+- [Monitoring, Alerting, and Reporting(#monitoring-alerting-and-reporting)
+- [User Interaction](#user-interaction)
+- [Availability and Backup](#availability-and-backup)
+
+### [Non-Functional Requirements](#non-functional-requirements)
+
+- [Accuracy and Data Quality](#accuracy-and-data-quality)
+- [Continuity and Consistency](#continuity-and-consistency)
+- [Response Time](#response-time)
+- [Security](#security)
+- [Compliance](#compliance)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Compatibility and Versioning](#compatibility-and-versioning)
+- [Maintenance and Documentation](#maintenance-and-documentation)
+- [Data Retention](#data-retention)
+
+### [Dependencies and Assumptions](#dependencies-and-assumptions)
+
+---
+
 ## Introduction
 
 The CARE project aims to provide a robust and comprehensive solution for coastal erosion risk estimation through real-time monitoring, data processing, risk evaluation, alerting, and visualization. This document outlines the functional, non-functional, dependencies, and assumptions that form the basis of the system's design and implementation.

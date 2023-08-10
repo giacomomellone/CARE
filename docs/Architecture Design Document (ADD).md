@@ -1,5 +1,49 @@
 # Architecture Design Document (ADD) for CARE Project
 
+## Table of Contents
+
+### [1. Introduction](#1-introduction)
+
+- [1.1 Purpose](#11-purpose)
+- [1.2 Scope](#12-scope)
+- [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+
+### [2. System Overview](#2-system-overview)
+
+- [2.1 System Context](#21-system-context)
+- [2.2 Constraints](#22-constraints)
+
+### [3. System Architecture](#3-system-architecture)
+
+- [Architecture Design Document (ADD) for CARE Project](#architecture-design-document-add-for-care-project)
+  - [Table of Contents](#table-of-contents)
+    - [1. Introduction](#1-introduction)
+    - [2. System Overview](#2-system-overview)
+    - [3. System Architecture](#3-system-architecture)
+  - [1. Introduction](#1-introduction-1)
+    - [1.1 Purpose](#11-purpose)
+    - [1.2 Scope](#12-scope)
+    - [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+  - [2. System Overview](#2-system-overview-1)
+    - [2.1 System Context](#21-system-context)
+    - [2.2 Constraints](#22-constraints)
+  - [3. System Architecture](#3-system-architecture-1)
+    - [3.1 High-Level Architecture](#31-high-level-architecture)
+    - [3.2 Modules Description](#32-modules-description)
+      - [3.2.1 User Interface (UI)](#321-user-interface-ui)
+      - [3.2.2 Visualization \& Reporting Module (VRM)](#322-visualization--reporting-module-vrm)
+      - [3.2.3 Data Collection Module (DCM)](#323-data-collection-module-dcm)
+      - [3.2.4 Data Preprocessing Module (DPM)](#324-data-preprocessing-module-dpm)
+      - [3.2.5 Erosion Pattern Analysis Module (EPAM)](#325-erosion-pattern-analysis-module-epam)
+      - [3.2.6 Alerting Module (AM)](#326-alerting-module-am)
+    - [3.3 Components Interaction](#33-components-interaction)
+    - [3.4 Data Pipeline Design](#34-data-pipeline-design)
+    - [3.5 Database Design](#35-database-design)
+    - [3.6 Security Design](#36-security-design)
+    - [Summary](#summary)
+
+---
+
 ## 1. Introduction
 
 ### 1.1 Purpose
