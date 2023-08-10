@@ -95,7 +95,3 @@ The `database` UML diagram outlines the database structure, including tables and
 ### 3.6 Security Design
 
 The `security` UML diagram highlights the security measures implemented across the system, ensuring confidentiality, integrity, and availability of data and services.
-
----
-
-This section details the architecture of the CARE system and provides insight into how different modules and components interact. The UML diagrams referenced here can be embedded in the document or appended as separate files to visualize the architecture and enhance understanding. Feel free to request any specific details or adjustments!
