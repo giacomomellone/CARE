@@ -7,85 +7,87 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
 - [CARE - Coastal Analysis \& Risk Evaluation System](#care---coastal-analysis--risk-evaluation-system)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Features](#features)
-  - [Requirements](#requirements)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
+  - [Modules Overview](#modules-overview)
+    - [User Interface (UI)](#user-interface-ui)
+    - [Visualization \& Reporting Module (VRM)](#visualization--reporting-module-vrm)
+    - [Data Collection Module (DCM)](#data-collection-module-dcm)
+    - [Data Preprocessing Module (DPM)](#data-preprocessing-module-dpm)
+    - [Erosion Pattern Analysis Module (EPAM)](#erosion-pattern-analysis-module-epam)
+    - [Alerting Module (AM)](#alerting-module-am)
+  - [Design Diagrams](#design-diagrams)
   - [Documentation](#documentation)
+  - [Release Pipeline](#release-pipeline)
   - [License](#license)
-- [Structure](#structure)
 
 ## Introduction
 
 Coastal erosion is a significant global concern, and timely detection and analysis are crucial for proper mitigation. CARE aims to provide a comprehensive solution to analyze and understand erosion patterns using advanced algorithms and visualization techniques.
 
-## Features
+## Modules Overview
 
-- Real-time monitoring and alerting
-- Advanced erosion pattern detection
-- Secure data processing and storage
-- Comprehensive reporting and visualization
-- Seamless integration with Sentinel-3
-- 24/7 availability
+### User Interface (UI)
 
-## Requirements
+- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Description:** Enables users to interact with the CARE system. Allows viewing visualizations, setting preferences, and receiving alerts.
 
-- C++ (for backend processing)
-- JavaScript (for front-end development)
-- Compatible with Sentinel-3 data formats
-- Other dependencies (as listed in `docs/requirements.md`)
+### Visualization & Reporting Module (VRM)
 
-## Getting Started
+- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Description:** Generates visualizations and reports based on processed data and analysis. Integrates with the UI to present insights to the user.
 
-To set up the CARE system locally, follow these steps:
+### Data Collection Module (DCM)
 
-1. Clone the repository: `git clone https://github.com/your-org/CARE-system.git`
-2. Navigate to the project directory: `cd CARE-system`
-3. Follow the detailed setup instructions in `docs/setup.md`
+- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Description:** Collects raw images and data from various sources like Sentinel-3 satellites. Interfaces with ground control stations and other data providers.
 
-## Usage
+### Data Preprocessing Module (DPM)
 
-For information on how to use the CARE system, see the user guide in `docs/user-guide.md`.
+- **Status:** <span style="color:orange;">In Progress</span> 🚧
+- **Description:** Preprocesses the collected data through image enhancement, edge detection, and region identification. Ensures data quality for subsequent analysis.
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <p><strong>Input Image Example:</strong></p>
+    <img src="./data/input/S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png" alt="Input Image" width="95%">
+  </div>
+  <div>
+    <p><strong>Output Image Example:</strong></p>
+    <img src="./data/output/preprocessed/S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png" alt="Output Image" width="95%">
+  </div>
+</div>
+
+- **Preprocessed Images:** [Intermediate Preprocessed](./data/output/intermediate_preprocessed)
+
+### Erosion Pattern Analysis Module (EPAM)
+
+- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Description:** Analyzes preprocessed data to identify erosion patterns, evaluate risks, and generate analysis results. Integrates with AM and VRM for alerting and visualization.
+
+### Alerting Module (AM)
+
+- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Description:** Issues alerts for detected high-risk areas. Works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
+
+## Design Diagrams
+
+For a detailed understanding of how the modules interact, refer to the [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md).
 
 ## Documentation
 
-Detailed documentation is available in the `docs/` folder, including:
+Detailed documentation for this project can be found in the [docs folder](./docs).
 
-- Project requirements
-- System architecture
-- Database design
-- Security considerations
+- [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md)
+- [System Requirements Document (SRD)](./docs/System%20Requirements%20Document%20(SRD).md)
+- [Verification and Validation Plan (VPP)](./docs/Verification%20and%20Validation%20Plan%20(VPP).md)
+
+## Release Pipeline
+
+The release pipeline is configured to automatically create a new release of the CARE project, package documentation as PDFs, and attach them to the release. The pipeline can be manually triggered via GitHub Actions, and it ensures that all important documentation and visualizations are packaged together in a structured format, making it easier for users and contributors to access relevant materials.
+
+To trigger the pipeline manually, navigate to the "Actions" tab on the GitHub repository and select the "Create Release" workflow.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) - see the `LICENSE` file for details.
+This project is licensed under the terms of the [license](./LICENSE).
 
-
-# Structure
-
-``` shell
-CARE-system/
-├── docs/                # Documentation folder
-│   ├── requirements.md  # Project requirements
-│   ├── architecture.md  # System architecture description
-│   ├── database.md      # Database design
-│   ├── security.md      # Security aspects
-│   └── user-guide.md    # End-user guide
-├── uml/                 # UML diagrams (PlantUML, Mermaid files)
-│   ├── sequence.puml    # Sequence diagrams
-│   ├── database.puml    # Database design
-│   └── security.puml    # Security design
-├── src/                 # Source code folder
-│   ├── cplusplus/       # C++ code
-│   │   ├── module1/     # Different modules
-│   │   └── module2/
-│   └── python/          # Python code (if any)
-│       └── scripts/     # Scripts folder
-├── test/                # Testing folder
-│   ├── unit-tests/      # Unit tests
-│   └── integration-tests # Integration tests
-├── build/               # Build scripts and configurations
-├── deploy/              # Deployment scripts and configurations
-├── README.md            # Project overview, setup instructions
-└── LICENSE              # Licensing information
-```
+All the images have been downloaded from [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)

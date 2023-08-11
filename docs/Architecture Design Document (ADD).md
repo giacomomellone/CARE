@@ -229,7 +229,6 @@ The modules will be:
 
 1. **Data Collection Module (DCM)**:
    - Handling Raw Images and Data
-   - Interfacing with Sensors (if applicable)
 
 2. **Data Preprocessing Module (DPM)**:
    - Data Cleaning and Transformation
