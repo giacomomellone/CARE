@@ -27,45 +27,40 @@ Coastal erosion is a significant global concern, and timely detection and analys
 
 ### User Interface (UI)
 
-- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Status:** _To-Do_ 📝
 - **Description:** Enables users to interact with the CARE system. Allows viewing visualizations, setting preferences, and receiving alerts.
 
 ### Visualization & Reporting Module (VRM)
 
-- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Status:** _To-Do_ 📝
 - **Description:** Generates visualizations and reports based on processed data and analysis. Integrates with the UI to present insights to the user.
 
 ### Data Collection Module (DCM)
 
-- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Status:** _To-Do_ 📝
 - **Description:** Collects raw images and data from various sources like Sentinel-3 satellites. Interfaces with ground control stations and other data providers.
 
 ### Data Preprocessing Module (DPM)
 
-- **Status:** <span style="color:orange;">In Progress</span> 🚧
+- **Status:** _In Progress_ 🚧
 - **Description:** Preprocesses the collected data through image enhancement, edge detection, and region identification. Ensures data quality for subsequent analysis.
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <p><strong>Input Image Example:</strong></p>
-    <img src="./data/input/S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png" alt="Input Image" width="95%">
-  </div>
-  <div>
-    <p><strong>Output Image Example:</strong></p>
-    <img src="./data/output/preprocessed/S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png" alt="Output Image" width="95%">
-  </div>
-</div>
+|      Input Image       |      HSV Space      |       Segment       |
+|:----------------------:|:-------------------:|:-------------------:|
+| ![Input](./data/input/S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png) | ![HSV](./data/output/intermediate_preprocessed/1_hsv_S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png.png) | ![Segmented](./data/output/intermediate_preprocessed/2_segmented_S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png.png) |
 
-- **Preprocessed Images:** [Intermediate Preprocessed](./data/output/intermediate_preprocessed)
+|   Noise Reduction   |      Contrast      |   Edge Detection    |
+|:-------------------:|:------------------:|:-------------------:|
+| ![Noise Reduced](./data/output/intermediate_preprocessed/3_noise_reduced_S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png.png) | ![Contrast Enhanced](./data/output/intermediate_preprocessed/4_contrast_enhanced_S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png.png) | ![Edge Detected](./data/output/intermediate_preprocessed/5_edge_detected_S3A_OL_1_ERR____20230810T091025_20230810T095440_20230810T112748_2655_102_093______PS1_O_NR_003_RGB_000.png.png) |
 
 ### Erosion Pattern Analysis Module (EPAM)
 
-- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Status:** _To-Do_ 📝
 - **Description:** Analyzes preprocessed data to identify erosion patterns, evaluate risks, and generate analysis results. Integrates with AM and VRM for alerting and visualization.
 
 ### Alerting Module (AM)
 
-- **Status:** <span style="color:red;">To-Do</span> 📝
+- **Status:** _To-Do_ 📝
 - **Description:** Issues alerts for detected high-risk areas. Works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
 
 ## Design Diagrams
