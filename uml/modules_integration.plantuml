@@ -1,0 +1,24 @@
+@startuml Python and C++ Modules Integration - Package Diagram
+package "Python Modules" {
+    [Data Collection Module (DCM)] as DCM
+    [Data Preprocessing Module (DPM)] as DPM
+    [Erosion Pattern Analysis Module (EPAM)] as EPAM
+}
+
+package "C++ Modules" {
+    [Visualization & Reporting Module (VRM)] as VRM
+    [Alerting Module (AM)] as AM
+}
+
+DCM --> DPM: Transforms raw data
+DPM --> EPAM: Processed data
+EPAM --> VRM: Erosion pattern data
+EPAM --> AM: Alerting signals
+VRM --> AM: Visualization alerts
+
+note right of DCM: Handling & transforming\nraw images and data
+note right of DPM: Data cleaning and\ntransformation
+note right of EPAM: Pattern recognition &\ndata analysis
+note right of VRM: Rendering complex\nvisualizations
+note right of AM: Managing & sending alerts
+@enduml

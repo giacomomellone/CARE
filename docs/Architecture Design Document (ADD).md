@@ -1,46 +1,49 @@
-# Architecture Design Document (ADD) for CARE Project
+# Architecture Design Document (ADD) - CARE Project <!-- omit in toc -->
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-### [1. Introduction](#1-introduction)
-
-- [1.1 Purpose](#11-purpose)
-- [1.2 Scope](#12-scope)
-- [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-
-### [2. System Overview](#2-system-overview)
-
-- [2.1 System Context](#21-system-context)
-- [2.2 Constraints](#22-constraints)
-
-### [3. System Architecture](#3-system-architecture)
-
-- [Architecture Design Document (ADD) for CARE Project](#architecture-design-document-add-for-care-project)
-  - [Table of Contents](#table-of-contents)
-    - [1. Introduction](#1-introduction)
-    - [2. System Overview](#2-system-overview)
-    - [3. System Architecture](#3-system-architecture)
-  - [1. Introduction](#1-introduction-1)
-    - [1.1 Purpose](#11-purpose)
-    - [1.2 Scope](#12-scope)
-    - [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-  - [2. System Overview](#2-system-overview-1)
-    - [2.1 System Context](#21-system-context)
-    - [2.2 Constraints](#22-constraints)
-  - [3. System Architecture](#3-system-architecture-1)
-    - [3.1 High-Level Architecture](#31-high-level-architecture)
-    - [3.2 Modules Description](#32-modules-description)
-      - [3.2.1 User Interface (UI)](#321-user-interface-ui)
-      - [3.2.2 Visualization \& Reporting Module (VRM)](#322-visualization--reporting-module-vrm)
-      - [3.2.3 Data Collection Module (DCM)](#323-data-collection-module-dcm)
-      - [3.2.4 Data Preprocessing Module (DPM)](#324-data-preprocessing-module-dpm)
-      - [3.2.5 Erosion Pattern Analysis Module (EPAM)](#325-erosion-pattern-analysis-module-epam)
-      - [3.2.6 Alerting Module (AM)](#326-alerting-module-am)
-    - [3.3 Components Interaction](#33-components-interaction)
-    - [3.4 Data Pipeline Design](#34-data-pipeline-design)
-    - [3.5 Database Design](#35-database-design)
-    - [3.6 Security Design](#36-security-design)
-    - [Summary](#summary)
+- [1. Introduction](#1-introduction)
+  - [1.1 Purpose](#11-purpose)
+  - [1.2 Scope](#12-scope)
+  - [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+- [2. System Overview](#2-system-overview)
+  - [2.1 System Context](#21-system-context)
+  - [2.2 Constraints](#22-constraints)
+- [3. System Architecture](#3-system-architecture)
+  - [3.1 High-Level Architecture](#31-high-level-architecture)
+  - [3.2 Modules Description](#32-modules-description)
+    - [3.2.1 User Interface (UI)](#321-user-interface-ui)
+    - [3.2.2 Visualization \& Reporting Module (VRM)](#322-visualization--reporting-module-vrm)
+    - [3.2.3 Data Collection Module (DCM)](#323-data-collection-module-dcm)
+    - [3.2.4 Data Preprocessing Module (DPM)](#324-data-preprocessing-module-dpm)
+    - [3.2.5 Erosion Pattern Analysis Module (EPAM)](#325-erosion-pattern-analysis-module-epam)
+    - [3.2.6 Alerting Module (AM)](#326-alerting-module-am)
+  - [3.3 Components Interaction](#33-components-interaction)
+  - [3.4 Data Pipeline Design](#34-data-pipeline-design)
+  - [3.5 Database Design](#35-database-design)
+  - [3.6 Security Design](#36-security-design)
+- [4. Technological Stack](#4-technological-stack)
+  - [4.1 Programming Languages and Module Distribution](#41-programming-languages-and-module-distribution)
+    - [Python](#python)
+    - [C++](#c)
+    - [Integration Between Python and C++](#integration-between-python-and-c)
+    - [Testing and Validation](#testing-and-validation)
+    - [Conclusion](#conclusion)
+  - [4.2 Version Control](#42-version-control)
+    - [GitHub](#github)
+  - [4.3 Continuous Integration and Continuous Deployment (CI/CD)](#43-continuous-integration-and-continuous-deployment-cicd)
+    - [GitHub Actions](#github-actions)
+  - [4.4 Security Measures](#44-security-measures)
+- [5. Deployment Strategy](#5-deployment-strategy)
+  - [5.1 Overview](#51-overview)
+  - [5.2 Environments](#52-environments)
+  - [5.3 Deployment Models](#53-deployment-models)
+    - [5.3.1 On-Premises Deployment](#531-on-premises-deployment)
+    - [5.3.2 Cloud Deployment](#532-cloud-deployment)
+  - [5.4 Deployment Tools](#54-deployment-tools)
+  - [5.5 Monitoring and Maintenance](#55-monitoring-and-maintenance)
+  - [5.6 Security Considerations](#56-security-considerations)
+  - [5.7 Disaster Recovery](#57-disaster-recovery)
 
 ---
 
@@ -67,6 +70,8 @@ The scope of this document covers the design and architectural considerations fo
 - **UI**: User Interface
 - **VRM**: Visualization & Reporting Module
 
+---
+
 ## 2. System Overview
 
 ### 2.1 System Context
@@ -80,6 +85,8 @@ The design and development of the CARE system are guided by the following constr
 - **Regulatory Compliance**: Compliance with ECSS standards and relevant environmental and data privacy regulations.
 - **Data Availability**: Dependency on regular and reliable access to Sentinel-3 data and supplemental coastal information.
 - **Performance Requirements**: Design to meet specific performance criteria as outlined in the System Requirements Document, including latency, resolution, availability, and security.
+
+---
 
 ## 3. System Architecture
 
@@ -200,6 +207,156 @@ The `Security Design - Package Diagram` UML diagram highlights the security meas
 
 ![Security Design](./images/security.png)
 
-### Summary
-
 These diagrams collectively provide a visual and textual overview of the system's architecture, data flow, database design, and security considerations. They enable readers to gain a comprehensive understanding of the structure and functionality of the CARE system.
+
+---
+
+## 4. Technological Stack
+
+### 4.1 Programming Languages and Module Distribution
+
+#### Python
+
+The CARE system utilizes Python as one of its core programming languages. Python is employed in various modules, including the Data Collection Module (DCM), Data Preprocessing Module (DPM), and Erosion Pattern Analysis Module (EPAM). The selection of Python is due to its rich library support, especially for scientific computing, and its flexibility in data manipulation and analysis.
+
+- **Version**: Python 3.8
+- **Libraries**: NumPy, SciPy, Pandas, Scikit-Learn
+- **Usage**:
+  - **Data Collection and Preprocessing**: Handling and transforming raw images and data.
+  - **Pattern Analysis**: Implementing machine learning models for erosion pattern recognition.
+
+The modules will be:
+
+1. **Data Collection Module (DCM)**:
+   - Handling Raw Images and Data
+   - Interfacing with Sensors (if applicable)
+
+2. **Data Preprocessing Module (DPM)**:
+   - Data Cleaning and Transformation
+   - Feature Extraction
+
+3. **Erosion Pattern Analysis Module (EPAM)**:
+   - Pattern Recognition
+   - Data Analysis
+
+#### C++
+
+C++ is leveraged in the Visualization & Reporting Module (VRM) and Alerting Module (AM). Chosen for its performance efficiency and robustness, C++ enables the system to generate real-time visualizations and alerts.
+
+- **Version**: C++17
+- **Libraries**: OpenGL for visualization, Boost for enhanced functionality
+- **Usage**:
+  - **Visualization**: Rendering complex visualizations of erosion patterns.
+  - **Alerting**: Managing and sending alerts with low latency.
+
+The modules will be:
+
+1. **Visualization & Reporting Module (VRM)**:
+   - Rendering Complex Visualizations
+   - Generating Reports
+
+2. **Alerting Module (AM)**:
+   - Managing Alerts
+
+#### Integration Between Python and C++
+
+- **Data Exchange**: Defining a mechanism for data exchange between Python and C++ modules.
+- **Interface Design**: Creating well-defined interfaces or APIs.
+- **Error Handling**: Implementing robust error handling and logging mechanisms.
+
+![Python - C++ Integration Design](./images/modules_integration.png)
+
+#### Testing and Validation
+
+- **Unit Testing**: Writing unit tests using appropriate frameworks.
+- **Integration Testing**: Designing integration tests to ensure seamless communication.
+
+#### Conclusion
+
+The mixed approach between Python and C++ enables the CARE system to utilize the best features of both languages. Python's rich library support facilitates scientific computing, while C++'s performance efficiency ensures real-time response. Careful planning for integration, comprehensive testing, and adherence to best practices in both languages are essential for the successful implementation.
+
+### 4.2 Version Control
+
+#### GitHub
+
+The CARE system's codebase is hosted on GitHub, providing a centralized repository for collaborative development. GitHub offers version control, issue tracking, code review, and integration with various tools, including GitHub Actions for CI/CD.
+
+- **Repository Structure**: Separate branches for development, staging, and production.
+- **Collaboration**: Use of pull requests, code reviews, and issues to manage development work.
+- **Access Control**: Role-based access control to ensure only authorized personnel can make changes to specific parts of the codebase.
+
+### 4.3 Continuous Integration and Continuous Deployment (CI/CD)
+
+#### GitHub Actions
+
+GitHub Actions is used for the CARE system's CI/CD pipeline. It automates the build, test, and deployment processes, ensuring that the codebase remains robust and that new changes are smoothly integrated.
+
+- **Build**: Automated build processes for both Python and C++ components.
+- **Testing**: Running unit tests, integration tests, and other quality checks.
+- **Deployment**: Automatic deployment to various environments based on the branch being merged.
+- **Monitoring and Logging**: Continuous monitoring of the application's performance and automatic logging of key events.
+
+### 4.4 Security Measures
+
+The CARE system implements various security measures to protect the integrity, confidentiality, and availability of the data and services.
+
+- **Code Review**: Regular code reviews on GitHub to identify and rectify potential security vulnerabilities.
+- **Static Analysis**: Utilizing static analysis tools the codebase is routinely scanned for potential security risks and programming errors.
+- **Encryption**: Usage of encryption protocols to secure data both in transit and at rest.
+- **Authentication and Authorization**: Implementing role-based access control within the GitHub repository and across different parts of the system.
+- **Security Scanning**: Integration of automated security scanning tools with GitHub Actions to continuously analyze the codebase for known security vulnerabilities.
+- **Compliance**: Adherence to relevant security standards and regulations, ensuring that the system meets legal and industry-specific requirements.
+
+---
+
+## 5. Deployment Strategy
+
+### 5.1 Overview
+
+The deployment strategy for the CARE system is designed to ensure efficient distribution, management, and operation of the system's various components across multiple environments. It considers factors like scalability, availability, security, and compliance with relevant regulations.
+
+### 5.2 Environments
+
+The CARE system will be deployed across three main environments to support the development lifecycle:
+
+- **Development Environment**: For continuous development, testing, and integration of new features and changes.
+- **Staging Environment**: For testing the system in a setup that mimics the production environment, allowing for final checks and validations before release.
+- **Production Environment**: For the live version of the system, accessible by end-users and stakeholders.
+
+### 5.3 Deployment Models
+
+#### 5.3.1 On-Premises Deployment
+
+Certain components, like the Data Collection Module (DCM) and data-sensitive processes, will be hosted on-premises to ensure compliance with data privacy regulations and to meet performance requirements.
+
+#### 5.3.2 Cloud Deployment
+
+Non-sensitive modules, like the Visualization & Reporting Module (VRM) and User Interface (UI), will be deployed on the cloud to ensure scalability and ease of access.
+
+### 5.4 Deployment Tools
+
+- **Containers**: Docker will be used to containerize individual components, ensuring consistency across different environments.
+- **Orchestration**: Kubernetes will be employed to manage and scale the containerized components, providing automated deployment, scaling, and operations of application containers.
+- **Continuous Integration/Continuous Deployment (CI/CD)**: GitHub Actions will be leveraged for automated building, testing, and deployment of the system, enabling a seamless development workflow.
+
+### 5.5 Monitoring and Maintenance
+
+- **Monitoring**: Tools like Prometheus and Grafana will be integrated for real-time monitoring of the system's performance, health, and usage.
+- **Maintenance**: Regular maintenance schedules will be established, and automation tools will be employed to handle updates, backups, and other routine tasks.
+
+### 5.6 Security Considerations
+
+- **Secure Communication**: All communication between different components and environments will be encrypted using protocols like TLS.
+- **Access Control**: Role-based access control (RBAC) will be implemented to restrict access to different parts of the system based on user roles and permissions.
+- **Compliance**: All deployment strategies will adhere to relevant regulatory requirements, such as ECSS standards.
+
+### 5.7 Disaster Recovery
+
+A comprehensive disaster recovery plan will be put in place, including:
+
+- **Backup and Restore**: Regular backups of critical data and configurations, with well-defined procedures for restoration.
+- **Failover Strategies**: Implementation of failover mechanisms to ensure high availability in case of component failure.
+
+The deployment strategy for the CARE system has been carefully crafted to align with the system's architectural design, performance requirements, and regulatory compliance. By employing modern deployment practices and tools, it seeks to provide a robust, scalable, and secure foundation for the efficient operation of the system.
+
+---
