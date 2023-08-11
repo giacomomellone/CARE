@@ -35,8 +35,5 @@
 .DS_Store
 plantuml.jar
 
-# images
-docs/images/*.png
-
 # python
 *.pyc
