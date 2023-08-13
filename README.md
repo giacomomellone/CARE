@@ -62,7 +62,7 @@ Coastal erosion is a significant global concern, and timely detection and analys
 
 ### Alerting Module (AM)
 
-- **Status:** _To-Do_ 📝
+- **Status:** _In Progress_ 🚧
 - **Description:** Issues alerts for detected high-risk areas. Works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
 
 ## Design Diagrams
