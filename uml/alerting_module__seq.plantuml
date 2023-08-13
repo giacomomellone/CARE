@@ -1,0 +1,24 @@
+@startuml Alerting Module (AM) - Sequence Diagram
+actor User
+
+User -> AlertingModule: initialize()
+User -> AlertingModule: add_channel(emailChannel)
+loop Continuously
+  User -> AlertingModule: run()
+  AlertingModule -> AlertingModule: fetch_data()
+  loop For each AlertCriteria
+    AlertingModule -> AlertCriteria: meets_criteria(data)
+    alt Meets Criteria
+      AlertCriteria -> AlertingModule: get_severity()
+      AlertingModule -> AlertingModule: trigger_alert(data)
+      loop For each NotificationChannel
+        AlertingModule -> NotificationChannel: send_notification(title, body)
+        Note right: Notification sent to channel(s)
+      end
+    else Doesn't Meet Criteria
+      Note right: No action needed
+    end
+  end
+  AlertingModule -> AlertingModule: Sleep for a period
+end
+@enduml

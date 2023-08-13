@@ -18,6 +18,8 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
   - [Documentation](#documentation)
   - [Release Pipeline](#release-pipeline)
   - [License](#license)
+  - [Support and Contribution](#support-and-contribution)
+  - [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -86,3 +88,14 @@ To trigger the pipeline manually, navigate to the "Actions" tab on the GitHub re
 This project is licensed under the terms of the [license](./LICENSE).
 
 All the images have been downloaded from [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)
+
+## Support and Contribution
+
+Feel free to open issues for any bugs or feature requests and contribute through pull requests.
+
+Certainly! You can add an acknowledgment section in the README to mention that the project was designed and powered with the assistance of OpenAI's GPT model. Here's an example of how you might write that section:
+
+## Acknowledgments
+
+This project was designed and powered in collaboration with OpenAI's GPT, a state-of-the-art machine learning model that assisted in the development and refinement of the code, architecture, and documentation.
+For more information about OpenAI's GPT models, please visit [OpenAI's website](https://openai.com)

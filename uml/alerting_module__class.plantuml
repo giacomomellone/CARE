@@ -1,0 +1,50 @@
+@startuml Alerting Module (AM) - Class Diagram
+class AlertingModule {
+  +initialize()
+  +add_channel(channel: NotificationChannel*)
+  +trigger_alert(data: const RiskData&)
+  +fetch_data() : RiskData
+  +run()
+}
+
+class NotificationChannel {
+  +send_notification(title: const std::string&, body: const std::string&) const
+}
+
+class EmailChannel {
+  -_recipient_email : std::string
+  +send_notification(title: const std::string&, body: const std::string&) const override
+}
+
+class AlertCriteria {
+  -_threshold : double
+  -_severity : int
+  +meets_criteria(data: const RiskData&) const
+  +get_severity() const
+}
+
+class RiskData {
+  -_risk_value : double
+  -_location : std::string
+  -_details : std::string
+  +get_risk_value() const
+  +get_location() const
+  +get_details() const
+}
+
+class AlertTemplate {
+  -_title_template : std::string
+  -_body_template : std::string
+  -_severity : int
+  +get_title() const
+  +get_body() const
+  +get_severity() const
+  +format_title(location: const std::string&) const
+  +format_body(details: const std::string&) const
+}
+
+AlertingModule "1" --> "1..*" AlertCriteria
+AlertingModule "1" --> "1..*" AlertTemplate
+AlertingModule "1" --> "1..*" NotificationChannel
+NotificationChannel <|-- EmailChannel
+@enduml

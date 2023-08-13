@@ -129,6 +129,8 @@ EPAM analyzes preprocessed data to identify erosion patterns, evaluate risks, an
 #### 3.2.6 Alerting Module (AM)
 
 AM issues alerts for detected high-risk areas. It works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
+![Alerting Module - Class Diagram](./images/alerting_module__class.png)
+![Alerting Module - Sequence Diagram](./images/alerting_module__seq.png)
 
 ### 3.3 Components Interaction
 
@@ -146,7 +148,7 @@ The `Components Interaction Design - Sequence Diagram` details the interaction b
 
 These interactions form a coherent flow that allows the system to retrieve, process, analyze, and present data, engaging different modules to perform specific functions.
 
-![Components Interaction Design](./images/components_interaction.png)
+![Components Interaction - Sequence Diagram](./images/components_interaction__seq.png)
 
 ### 3.4 Data Pipeline Design
 
@@ -166,7 +168,7 @@ The `Data Pipeline Design - Sequence Diagram` offers an insight into the sequent
 
 - **Sending Analysis Results**: EPAM sends the final analysis results back to the user, summarizing the identified erosion patterns and associated risks.
 
-![Data Pipeline Design](./images/data_pipeline.png)
+![Data Pipeline - Sequence Diagram](./images/data_pipeline__seq.png)
 
 ### 3.5 Database Design
 
@@ -194,7 +196,7 @@ The `Database Design - Class Diagram` outlines the structure of the database, en
   - Manages user profiles and preferences.
   - Associated with the alerts they receive.
 
-![Database Design](./images/database.png)
+![Database - Class Diagram](./images/database__class.png)
 
 ### 3.6 Security Design
 
@@ -205,7 +207,7 @@ The `Security Design - Package Diagram` UML diagram highlights the security meas
 - **Access Control**: Demonstrates how access to different parts of the system is controlled and restricted based on user roles and permissions.
 - **Auditing and Monitoring**: Shows how the system conducts regular security audits and monitors for potential issues, complying with security standards.
 
-![Security Design](./images/security.png)
+![Security Design - Package Diagram](./images/security__pack.png)
 
 These diagrams collectively provide a visual and textual overview of the system's architecture, data flow, database design, and security considerations. They enable readers to gain a comprehensive understanding of the structure and functionality of the CARE system.
 
@@ -263,7 +265,7 @@ The modules will be:
 - **Interface Design**: Creating well-defined interfaces or APIs.
 - **Error Handling**: Implementing robust error handling and logging mechanisms.
 
-![Python - C++ Integration Design](./images/modules_integration.png)
+![Python - C++ Integration - Package Diagram](./images/modules_integration__pack.png)
 
 #### Testing and Validation
 

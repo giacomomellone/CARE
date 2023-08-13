@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# Build folders
+build/
+
 # misc
 .DS_Store
 plantuml.jar
