@@ -6,11 +6,8 @@
 
 class EmailChannel : public NotificationChannel
 {
-private:
-	std::string recipientEmail;
-
 public:
-	EmailChannel(const std::string &recipientEmail) : recipientEmail(recipientEmail) {}
+	EmailChannel(const std::string &recipient_email) : _recipient_email(recipient_email) {}
 
 	virtual ~EmailChannel() = default;
 
@@ -19,8 +16,11 @@ public:
 	{
 		// Here, you would normally use an email library to send the email.
 		// For this example, we'll just print the email to the console.
-		std::cout << "Sending email to " << recipientEmail << '\n';
+		std::cout << "Sending email to " << _recipient_email << '\n';
 		std::cout << "Title: " << title << '\n';
 		std::cout << "Body: " << body << '\n';
 	}
+
+private:
+	std::string _recipient_email;
 };
