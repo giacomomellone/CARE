@@ -16,7 +16,6 @@
   - [4.2 Continuity and Consistency](#42-continuity-and-consistency)
   - [4.3 Response Time](#43-response-time)
   - [4.4 Security](#44-security)
-  - [4.5 Compliance](#45-compliance)
   - [4.6 Monitoring and Alerting](#46-monitoring-and-alerting)
   - [4.7 Compatibility and Versioning](#47-compatibility-and-versioning)
   - [4.8 Maintenance and Documentation](#48-maintenance-and-documentation)
@@ -97,11 +96,6 @@ The CARE project aims to provide a robust and comprehensive solution for coastal
 - **CARE-260**: The system shall encrypt all sensitive data, both in transit and at rest, using industry-standard encryption protocols.
 - **CARE-270**: The system shall conduct regular security audits and address all identified vulnerabilities within 1 month.
 
-### 4.5 Compliance
-
-- **CARE-150**: The system shall comply with all relevant ECSS standards, with zero non-compliance issues.
-- **CARE-180**: Assumes compliance with all relevant environmental and data privacy regulations.
-
 ### 4.6 Monitoring and Alerting
 
 - **CARE-210**: The system shall include real-time monitoring tools to track system health and alert administrators of any potential issues.
@@ -121,8 +115,9 @@ The CARE project aims to provide a robust and comprehensive solution for coastal
 
 ## 5. Dependencies and Assumptions
 
-- **CARE-160**: Dependent on regular and reliable access to Sentinel-3 data, with no more than 2 hours of downtime per month.
-- **CARE-170**: Assumes availability of supplemental coastal, weather, and tidal information, with at least 98% coverage of the relevant coastal areas.
-- **CARE-180**: Assumes compliance with all relevant environmental and data privacy regulations.
+- **CARE-150**: The system shall comply with all relevant ECSS standards, with zero non-compliance issues.
+- **CARE-160**: The system shall ensure access to Sentinel-3 data regularly and reliably, with downtime not exceeding 2 hours per month.
+- **CARE-170**: The system shall have access to supplemental coastal, weather, and tidal information, covering at least 98% of the relevant coastal areas.
+- **CARE-180**: The system shall comply with all relevant environmental and data privacy regulations, maintaining adherence to standards such as GDPR, local environmental laws, etc.
 
 ---

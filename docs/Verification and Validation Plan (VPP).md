@@ -27,6 +27,9 @@
 - [8. Testing Tools](#8-testing-tools)
   - [8.1 Python](#81-python)
   - [8.2 C++](#82-c)
+  - [9. User Acceptance Testing (UAT) Plan](#9-user-acceptance-testing-uat-plan)
+    - [9.1 Factory Acceptance Tests (FATs)](#91-factory-acceptance-tests-fats)
+    - [9.2 Operational Site Acceptance Tests (OSATs)](#92-operational-site-acceptance-tests-osats)
 
 ---
 
@@ -44,7 +47,7 @@ This VVP covers all phases of the development life cycle, including requirements
 
 ### 1.3 References
 
-Refer to the System Requirement Specifications (SRS), Architecture Design Document (ADD), and other relevant project documentation.
+Refer to the [System Requirements Document (SRD)](./docs/System%20Requirements%20Document%20(SRD).md), [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md), and other relevant project documentation.
 
 ---
 
@@ -219,3 +222,37 @@ This section provides details on the specific tools used in the testing process 
 The selection of testing tools is based on compatibility, efficiency, and suitability for testing the specific features and requirements of the CARE system. This ensures that the verification and validation process is thorough and aligned with the technical and functional needs of the project.
 
 ---
+
+### 9. User Acceptance Testing (UAT) Plan
+
+The User Acceptance Testing (UAT) phase will be divided into two stages: Factory Acceptance Tests (FATs) and Operational Site Acceptance Tests (OSATs). The primary goal of these stages is to verify and validate the system functionality, performance, and compatibility within both controlled and real operational environments.
+
+#### 9.1 Factory Acceptance Tests (FATs)
+
+**Objective**: Validate that the system meets the specified criteria in a controlled environment, before it leaves the manufacturer.
+
+**Method**:
+
+- **Preparation**: Set up the controlled test environment.
+- **Selection of Test Users**: Engage users based on expertise, role, and experience.
+- **Execution of Test Scenarios**: Run test cases covering essential functionalities.
+- **Evaluation**: Assess against success criteria and document findings.
+
+**Criteria**: Success is marked by passing all test cases and positive feedback from the test users.
+
+#### 9.2 Operational Site Acceptance Tests (OSATs)
+
+**Objective**: Confirm that the system operates as expected in the real operating environment, upon the delivery.
+
+**Method**:
+
+- **Preparation**: Configure the system in the real operating environment.
+- **Selection of Test Users**: Engage users based on department and job function.
+- **Execution of Test Scenarios**: Perform real-world scenarios reflecting actual user workflows.
+- **Evaluation**: Compare performance with operational requirements.
+
+**Criteria**: Success is marked by smooth operation in the actual environment and approval from the operational users.
+
+This plan ensures that the system is assessed through a two-stage process, focusing on both laboratory-controlled settings (FATs) and real-world operating conditions (OSATs). It represents a comprehensive approach to validate that the system meets user requirements and expectations.
+
+--
