@@ -65,6 +65,10 @@ Coastal erosion is a significant global concern, and timely detection and analys
 - **Status:** _In Progress_ 🚧
 - **Description:** Issues alerts for detected high-risk areas. Works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
 
+**Simplified Workflow**:
+
+![Alerting Module - Simplified Sequence Diagram](./docs/images/alerting_module__seq_simplified.png)
+
 ## Design Diagrams
 
 For a detailed understanding of how the modules interact, refer to the [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md).
@@ -93,9 +97,7 @@ All the images have been downloaded from [Copernicus Open Access Hub](https://sc
 
 Feel free to open issues for any bugs or feature requests and contribute through pull requests.
 
-Certainly! You can add an acknowledgment section in the README to mention that the project was designed and powered with the assistance of OpenAI's GPT model. Here's an example of how you might write that section:
-
 ## Acknowledgments
 
-This project was designed and powered in collaboration with OpenAI's GPT, a state-of-the-art machine learning model that assisted in the development and refinement of the code, architecture, and documentation.
+Throughout the development of this project, insights from OpenAI's GPT were utilized to enhance aspects of the code, architecture, and documentation.
 For more information about OpenAI's GPT models, please visit [OpenAI's website](https://openai.com)

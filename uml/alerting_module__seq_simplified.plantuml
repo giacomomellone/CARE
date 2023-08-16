@@ -1,0 +1,19 @@
+@startuml Alerting Module (AM) - Sequence Diagram Simplified
+
+actor User
+entity "AlertingModule" as AM
+
+User -> AM: Initialize
+activate AM
+
+loop Continuously
+    User -> AM: Fetch erosion risk data
+    AM -> AM: Evaluate risk
+    alt High Risk Detected
+        AM -> User: Trigger Alert
+    else No Risk
+        note over AM: No action needed
+    end
+end
+
+@enduml
