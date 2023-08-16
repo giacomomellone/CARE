@@ -62,7 +62,7 @@ The source code is divided based on the language and functionality:
 - **Status:** _To-Do_ 📝
 - **Description:** Collects raw images and data from various sources like Sentinel-3 satellites. Interfaces with ground control stations and other data providers.
 
-### Data Preprocessing Module (DPM)
+### Data Preprocessing Module ([DPM](./src/python/dpm))
 
 - **Status:** _In Progress_ 🚧
 - **Description:** Preprocesses the collected data through image enhancement, edge detection, and region identification. Ensures data quality for subsequent analysis.
@@ -80,7 +80,7 @@ The source code is divided based on the language and functionality:
 - **Status:** _To-Do_ 📝
 - **Description:** Analyzes preprocessed data to identify erosion patterns, evaluate risks, and generate analysis results. Integrates with AM and VRM for alerting and visualization.
 
-### Alerting Module (AM)
+### Alerting Module ([AM](./src/cpp/am))
 
 - **Status:** _In Progress_ 🚧
 - **Description:** Issues alerts for detected high-risk areas. Works closely with EPAM and UI to deliver timely notifications to relevant stakeholders.
