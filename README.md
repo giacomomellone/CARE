@@ -7,7 +7,8 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
 - [CARE - Coastal Analysis \& Risk Evaluation System](#care---coastal-analysis--risk-evaluation-system)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Modules Overview](#modules-overview)
+  - [Documentation: docs folder](#documentation-docs-folder)
+  - [Modules: src folder](#modules-src-folder)
     - [User Interface (UI)](#user-interface-ui)
     - [Visualization \& Reporting Module (VRM)](#visualization--reporting-module-vrm)
     - [Data Collection Module (DCM)](#data-collection-module-dcm)
@@ -15,7 +16,6 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
     - [Erosion Pattern Analysis Module (EPAM)](#erosion-pattern-analysis-module-epam)
     - [Alerting Module (AM)](#alerting-module-am)
   - [Design Diagrams](#design-diagrams)
-  - [Documentation](#documentation)
   - [Release Pipeline](#release-pipeline)
   - [License](#license)
   - [Support and Contribution](#support-and-contribution)
@@ -25,7 +25,27 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
 
 Coastal erosion is a significant global concern, and timely detection and analysis are crucial for proper mitigation. CARE aims to provide a comprehensive solution to analyze and understand erosion patterns using advanced algorithms and visualization techniques.
 
-## Modules Overview
+The primary content of this repository is organized into three main folders:
+
+- [docs folder](./docs) - containing all the documentation.
+- [src folder](./src) - source code for the various modules.
+- [data folder](./data) - holds input and output data related to our analyses.
+
+## Documentation: [docs folder](./docs)
+
+- [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md)
+- [System Requirements Document (SRD)](./docs/System%20Requirements%20Document%20(SRD).md)
+- [Verification and Validation Plan (VPP)](./docs/Verification%20and%20Validation%20Plan%20(VPP).md)
+- [UML](./docs/uml) - UML diagrams that represent system's architecture and flow.
+- [images](./docs/images) - visual aids and figures used in the documents.
+
+## Modules: [src folder](./src)
+
+The source code is divided based on the language and functionality:
+
+- `cpp` - C++ code, mainly for the alerting and visualization modules.
+- `python` - Python scripts, focused on data processing and management.
+- `scripts` - Utility scripts.
 
 ### User Interface (UI)
 
@@ -72,14 +92,6 @@ Coastal erosion is a significant global concern, and timely detection and analys
 ## Design Diagrams
 
 For a detailed understanding of how the modules interact, refer to the [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md).
-
-## Documentation
-
-Detailed documentation for this project can be found in the [docs folder](./docs).
-
-- [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md)
-- [System Requirements Document (SRD)](./docs/System%20Requirements%20Document%20(SRD).md)
-- [Verification and Validation Plan (VPP)](./docs/Verification%20and%20Validation%20Plan%20(VPP).md)
 
 ## Release Pipeline
 

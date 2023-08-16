@@ -3,7 +3,7 @@
 # Path to plantuml.jar in the main folder
 PLANTUML_PATH="./plantuml.jar"
 # Directory containing the PlantUML files
-UML_DIR="./uml"
+UML_DIR="./docs/uml"
 # Absolute path where the generated images will be stored (in the docs/images folder)
 IMG_DIR_ABSOLUTE_PATH="$(pwd)/docs/images"
 

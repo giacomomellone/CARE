@@ -35,7 +35,7 @@ jobs:
 
     - name: Generate the UML PNGs
       run: |
-        ./tools/generate_uml_images.sh
+        ./src/scripts/generate_uml_images.sh
 
     - name: Convert Markdown files to PDF
       working-directory: ./docs
