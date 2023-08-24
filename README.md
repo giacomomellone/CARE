@@ -2,6 +2,8 @@
 
 CARE is a system designed to monitor and analyze coastal erosion patterns using data provided by Sentinel-3. The system processes raw images and other telemetries, applies edge detection and other algorithms to recognize erosion patterns, and offers real-time monitoring and alerting functions.
 
+---
+
 ## Table of Contents
 
 - [CARE - Coastal Analysis \& Risk Evaluation System](#care---coastal-analysis--risk-evaluation-system)
@@ -15,11 +17,17 @@ CARE is a system designed to monitor and analyze coastal erosion patterns using 
     - [Data Preprocessing Module (DPM)](#data-preprocessing-module-dpm)
     - [Erosion Pattern Analysis Module (EPAM)](#erosion-pattern-analysis-module-epam)
     - [Alerting Module (AM)](#alerting-module-am)
+  - [Deployment](#deployment)
+    - [Prerequisites](#prerequisites)
+    - [Building and Running with Docker Compose](#building-and-running-with-docker-compose)
+    - [Data Persistence](#data-persistence)
   - [Design Diagrams](#design-diagrams)
   - [Release Pipeline](#release-pipeline)
   - [License](#license)
   - [Support and Contribution](#support-and-contribution)
   - [Acknowledgments](#acknowledgments)
+
+---
 
 ## Introduction
 
@@ -31,6 +39,8 @@ The primary content of this repository is organized into three main folders:
 - [src folder](./src) - source code for the various modules.
 - [data folder](./data) - holds input and output data related to our analyses.
 
+---
+
 ## Documentation: [docs folder](./docs)
 
 - [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md)
@@ -38,6 +48,8 @@ The primary content of this repository is organized into three main folders:
 - [Verification and Validation Plan (VPP)](./docs/Verification%20and%20Validation%20Plan%20(VPP).md)
 - [UML](./docs/uml) - UML diagrams that represent system's architecture and flow.
 - [images](./docs/images) - visual aids and figures used in the documents.
+
+---
 
 ## Modules: [src folder](./src)
 
@@ -89,9 +101,60 @@ The source code is divided based on the language and functionality:
 
 ![Alerting Module - Simplified Sequence Diagram](./docs/images/alerting_module__seq_simplified.png)
 
+---
+
+## Deployment
+
+For a seamless deployment of the CARE system, we utilize Docker Compose, a tool for defining and running multi-container Docker applications.
+
+### Prerequisites
+
+- Ensure Docker and Docker Compose are installed on your machine.
+- Navigate to the root directory of the CARE repository.
+
+### Building and Running with Docker Compose
+
+1. **Building the Services:**
+
+    Before running the system for the first time or after any changes, build the services:
+
+    ```bash
+    docker compose build
+    ```
+
+2. **Starting the Services:**
+
+    To start the CARE services:
+
+    ```bash
+    docker compose up
+    ```
+
+3. **Stopping the Services:**
+
+    To stop the running services:
+
+    ```bash
+    docker compose down
+    ```
+
+### Data Persistence
+
+If you have volumes declared to persist data (like processed images, databases, etc.), these will remain even after stopping the services. To clear all data:
+
+```bash
+docker compose down -v
+```
+
+**Note**: Use this command with caution as it will remove all data stored within the declared volumes.
+
+---
+
 ## Design Diagrams
 
 For a detailed understanding of how the modules interact, refer to the [Architecture Design Document (ADD)](./docs/Architecture%20Design%20Document%20(ADD).md).
+
+---
 
 ## Release Pipeline
 
@@ -99,17 +162,22 @@ The release pipeline is configured to automatically create a new release of the 
 
 To trigger the pipeline manually, navigate to the "Actions" tab on the GitHub repository and select the "Create Release" workflow.
 
+---
+
 ## License
 
 This project is licensed under the terms of the [license](./LICENSE).
 
 All the images have been downloaded from [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)
 
+---
+
 ## Support and Contribution
 
 Feel free to open issues for any bugs or feature requests and contribute through pull requests.
 
+---
+
 ## Acknowledgments
 
 Throughout the development of this project, insights from OpenAI's GPT were utilized to enhance aspects of the code, architecture, and documentation.
-For more information about OpenAI's GPT models, please visit [OpenAI's website](https://openai.com)

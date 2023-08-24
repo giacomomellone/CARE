@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  dpm_service:
+    build:
+      context: .
+      dockerfile: src/python/dpm/Dockerfile
+    container_name: dpm_container
+    volumes:
+      - ./data:/app/data
+

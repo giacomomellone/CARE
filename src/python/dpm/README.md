@@ -46,6 +46,38 @@ If you'd like to add or remove certain image processing techniques, modify the `
 
 By default, images are acquired from `./data/input` and processed images are saved in `./data/output/intermediate_preprocessed` and `./data/output/preprocessed`. Modify these paths in the `main()` function as required.
 
+## Docker Deployment
+
+Running the DPM inside a Docker container allows for a consistent and isolated environment, ensuring that all dependencies are appropriately managed.
+
+### Building the Docker Image
+
+Before running the DPM inside a container, you must first build the Docker image.
+
+1. Navigate back to the root of the `CARE` project:
+
+2. Run the command:
+
+   ```bash
+   docker build -t dpm_image -f src/python/dpm/Dockerfile .
+   ```
+
+   This command builds a Docker image and names it `dpm_image`.
+
+### Running the DPM using Docker
+
+After building the image, you can run the DPM inside a Docker container using the following instructions:
+
+1. Navigate back to the root of the `CARE` project:
+
+2. Run the DPM inside a Docker container with the following command:
+
+   ```bash
+   docker run --name dpm_container -v $(pwd)/data:/app/data dpm_image
+   ```
+
+This command runs a container named `dpm_container`, maps the local `data` directory (from the `CARE` root) to the `/app/data` directory inside the container, and uses the `dpm_image` image to run the container.
+
 ## Dependencies
 
 - [OpenCV](https://opencv.org/) - For image processing functionalities.
