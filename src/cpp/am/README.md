@@ -15,7 +15,7 @@ The Alerting Module (AM) is designed to continuously evaluate and trigger alerts
 3. **Evaluating Alerts:** The risk data is evaluated against predefined criteria.
 4. **Triggering Alerts:** If the criteria are met, alerts are triggered using corresponding templates and sent through the specified channels.
 
-## Building
+## Building Locally
 
 Make sure you have the required dependencies installed, including a C++17 compatible compiler.
 
@@ -34,6 +34,38 @@ Make sure you have the required dependencies installed, including a C++17 compat
 ## Debugging
 
 You can debug the code using the `Run and Debug` option in Visual Studio Code. The `launch.json` is configured and the Debug can be launched via the `AM - Build and Debug` option.
+
+## Docker Deployment
+
+Running the AM inside a Docker container allows for a consistent and isolated environment, ensuring that all dependencies are appropriately managed.
+
+### Building the Docker Image
+
+Before running the AM inside a container, you must first build the Docker image.
+
+1. Navigate back to the root of the `CARE` project:
+
+2. Run the command:
+
+   ```bash
+   docker build -t am_image -f src/cpp/am/Dockerfile .
+   ```
+
+   This command builds a Docker image and names it `am_image`.
+
+### Running the AM using Docker
+
+After building the image, you can run the AM inside a Docker container using the following instructions:
+
+1. Navigate back to the root of the `CARE` project:
+
+2. Run the AM inside a Docker container with the following command:
+
+   ```bash
+   docker run --name am_container am_image
+   ```
+
+This command runs a container named `am_container` and uses the `am_image` image to run the container.
 
 ## Customizing
 

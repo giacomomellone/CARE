@@ -9,3 +9,8 @@ services:
     volumes:
       - ./data:/app/data
 
+  am_service:
+    build:
+      context: ./src/cpp/am
+      dockerfile: Dockerfile
+    restart: always
